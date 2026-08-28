@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+    /* The browser surfaces carry the palette too. */
+    caret-color: #b38012;
+    scrollbar-color: rgba(200, 155, 56, 0.55) #faf4e6;
+    scrollbar-width: thin;
+  }
+
+  body {
+    @apply bg-linen font-body text-body text-ink antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Arabic display type sits tighter than the Latin default. */
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-navy-950;
+    text-wrap: balance;
+  }
+
+  /* Outline rather than ring+offset, so focus stays visible on the linen
+     surfaces and on the midnight bands alike. */
+  :focus-visible {
+    outline: 2px solid #c89b38;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    @apply bg-gold-500/30 text-navy-950;
+  }
+
+  a {
+    text-underline-offset: 0.25em;
+    text-decoration-thickness: 1px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #faf4e6;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(200, 155, 56, 0.55);
+    border: 2px solid #faf4e6;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b38012;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-container px-4 md:px-8 lg:px-16;
+  }
+
+  /* Latin numerals stay LTR inside RTL paragraphs, and stay column-aligned
+     wherever prices or phone numbers stack. */
+  .ltr-nums {
+    direction: ltr;
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum' 1;
+  }
+
+  /* Ruled paper from the agency's own ledgers — the texture the thesis names,
+     not a decorative grid. */
+  .ledger-rules {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      rgba(200, 155, 56, 0.12) 0 1px,
+      transparent 1px 32px
+    );
+  }
+
+  .hero-scrim {
+    background: linear-gradient(
+      180deg,
+      rgba(8, 27, 46, 0.62) 0%,
+      rgba(8, 27, 46, 0.72) 45%,
+      rgba(8, 27, 46, 0.95) 100%
+    );
+  }
+
+  /* RTL: the copy sits on the right, so the falloff runs leftward. */
+  .hero-text-scrim {
+    background: linear-gradient(
+      to left,
+      rgba(8, 27, 46, 0.45) 0%,
+      rgba(8, 27, 46, 0.34) 42%,
+      rgba(8, 27, 46, 0) 78%
+    );
+  }
+
+  /* Reserved for the single gold line in the hero headline. */
+  .gold-halo {
+    text-shadow: 0 0 32px rgba(200, 155, 56, 0.32);
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  direction: ltr;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Preserve essential non-motion state feedback (color changes & opacity cues) */
+  [class*="transition-colors"],
+  [class*="transition-opacity"] {
+    transition-duration: 150ms !important;
+  }
+}
