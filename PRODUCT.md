@@ -1,4 +1,4 @@
-﻿# Product
+# Product
 
 <!-- impeccable:product-schema 1 -->
 
@@ -56,7 +56,7 @@ A premier, 48-year accredited tourism institution (Category "A" License No. 167 
 - Verified Facebook presence: `facebook.com/profile.php?id=61591511407152`.
 - Active Umrah packages and seasonal Hajj reservations.
 - Official Ministry of Tourism Category (A) License No. 167 (1976).
-- Direct phone lines: `01002258319`, `01006174063`, `01044976048`, `01092032392`.
+- Direct phone lines: `010XXXXXXXX`, `010XXXXXXXX`, `010XXXXXXXX`, `010XXXXXXXX`.
 
 ## Product Principles
 

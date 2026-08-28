@@ -2,8 +2,11 @@ import { site } from '../data/site'
 
 const COUNTRY_CODE = '20'
 
-/** 01002258319 -> 201002258319 (wa.me expects no plus and no leading zero). */
+/** 010XXXXXXXX -> 2010XXXXXXXX (wa.me expects no plus and no leading zero). */
 export function toInternational(localNumber: string): string {
+  if (/[a-zA-Z]/.test(localNumber)) {
+    return COUNTRY_CODE + localNumber.replace(/^0/, '')
+  }
   return COUNTRY_CODE + localNumber.replace(/\D/g, '').replace(/^0/, '')
 }
 

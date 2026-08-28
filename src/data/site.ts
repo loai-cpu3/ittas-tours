@@ -30,7 +30,7 @@ export const site = {
   email: 'assiut@ittas-tours.com',
   facebook: 'https://www.facebook.com/profile.php?id=61591511407152',
   /** First entry is the primary hotline used by every one-tap CTA. */
-  phones: ['01002258319', '01006174063', '01044976048', '01092032392'],
+  phones: ['010XXXXXXXX', '010XXXXXXXX', '010XXXXXXXX', '010XXXXXXXX'],
 } as const
 
 /** Years of operation, so the "48 عاماً" claim never goes stale. */
