@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Icon } from '../ui/Icon'
 import { GROUP_MIN } from '../../lib/pricing'
+import { GeometricField } from '../ui/GeometricField'
 
 const perks = [
   { icon: 'groups', label: 'خصم 5% للمجموعات والعائلات' },
@@ -16,11 +17,12 @@ export function FamilyPlannerBand() {
     <section className="bg-cream py-14 md:py-16">
       <div className="container-page">
         <div className="relative overflow-hidden rounded-2xl bg-navy-950 p-7 text-white md:p-10">
+          <GeometricField tone="gold-on-navy" fade="radial" animate />
           <span className="absolute inset-x-0 top-0 h-px bg-gradient-to-l from-transparent via-gold-500 to-transparent" />
           <span className="absolute right-0 top-0 h-20 w-px bg-gradient-to-b from-gold-500 to-transparent" />
           <span className="absolute left-0 top-0 h-20 w-px bg-gradient-to-b from-gold-500 to-transparent" />
 
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="relative z-10 flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
               <h2 className="mb-3 font-display text-h1 text-white">
                 خطط لرحلة عمرة عائلتك أو مجموعتك من مكان واحد

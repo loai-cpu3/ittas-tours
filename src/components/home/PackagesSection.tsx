@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { Icon } from '../ui/Icon'
 import { PackageCard } from './PackageCard'
 import { WhatsAppButton } from '../ui/Buttons'
+import { GeometricField } from '../ui/GeometricField'
 import type { Package } from '../../data/packages'
 
 export function PackagesSection({
@@ -16,8 +17,9 @@ export function PackagesSection({
   const filtered = visible.length !== total
 
   return (
-    <section id="packages" className="scroll-mt-24 bg-linen py-14 md:py-20">
-      <div className="container-page">
+    <section id="packages" className="relative scroll-mt-24 overflow-hidden bg-linen py-14 md:py-20">
+      <GeometricField tone="gold-on-linen" fade="radial" animate={false} />
+      <div className="container-page relative z-10">
         <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <h2 className="mb-3 font-display text-h1 text-navy-950">برامج العمرة المختارة</h2>

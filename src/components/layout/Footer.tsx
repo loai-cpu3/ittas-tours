@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { Icon } from '../ui/Icon'
 import { site, yearsOfExperience } from '../../data/site'
 import { telHref } from '../../lib/contact'
+import { GeometricField } from '../ui/GeometricField'
 
 const quickLinks = [
   { label: 'الرئيسية', href: '/' },
@@ -20,8 +21,9 @@ const infoLinks = [
 
 export function Footer() {
   return (
-    <footer className="mt-auto border-t border-gold-500/15 bg-navy-950 pb-24 pt-16 text-white/85 md:pb-8">
-      <div className="container-page">
+    <footer className="relative mt-auto overflow-hidden border-t border-gold-500/15 bg-navy-950 pb-24 pt-16 text-white/85 md:pb-8">
+      <GeometricField tone="gold-on-navy" fade="bottom" animate />
+      <div className="container-page relative z-10">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="mb-5 flex items-center gap-3">
